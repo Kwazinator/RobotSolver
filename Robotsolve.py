@@ -216,7 +216,11 @@ def sendData(postresponse):
 
 
 def getCanvasData():
-    browser = webdriver.Chrome()
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--disable-dev-shm-usage')
+    browser = webdriver.Chrome(chrome_options=chrome_options)
     getURL = "http://www.robotreboot.com/challenge"
     browser.get(getURL)
     javascript = "canv = document.querySelector(\"canvas\"); canv2D = canv.getContext(\"2d\"); return canv2D.getImageData(0,0,canv.width,canv.height);"
