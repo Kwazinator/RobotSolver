@@ -341,6 +341,12 @@ while 1:
         # model.Game(grid=grid, robots=robits, token=listTokens[0])
         paths = [[] for n in range(5)]
         for x, tokenz in enumerate(listTokens):
+            print('answers')
+            print(grid)
+            print(robits)
+            print(colorz)
+            print(tokenz)
+            print('**************************************')
             paths[x] = ricochet.search(model.Game(grid=grid, robots=robits, col=colorz, token=tokenz))
         print(paths)
 
@@ -369,7 +375,7 @@ while 1:
         }
         print(postresponse)
         postDiscord(solutions)
-        sendData(postresponse)
+        #sendData(postresponse)
     finally:
         pass
 
