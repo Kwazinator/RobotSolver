@@ -280,21 +280,12 @@ def callback():
     return
 
 
-oldconfig = getConfig()['config']
 humans = 4
 robotscores = 0
 
 while 1:
     try:
         counter = 0
-        time.sleep(15)
-        while (datetime.datetime.now().hour != 15 or datetime.datetime.now().minute != 59 or datetime.datetime.now().second < 55):
-            time.sleep(3)
-        while (getConfig()['config'] == oldconfig):
-            time.sleep(.5)
-            counter += 1
-            if (counter > 200):
-                time.sleep(600)
         boardData = getCanvasData()
         walls = getWalls(boardData)
         data = getConfig()
